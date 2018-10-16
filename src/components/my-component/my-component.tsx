@@ -19,6 +19,6 @@ export class MyComponent {
   }
 
   render() {
-    return <div>Hello, World! I'm {this.format()}</div>;
+    return <div class = "color-yellow">Hello, World! I'm {this.format()}</div>;
   }
 }
