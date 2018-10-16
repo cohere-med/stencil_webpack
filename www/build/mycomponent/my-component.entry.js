@@ -8,7 +8,7 @@ class MyComponent {
             (this.last ? ` ${this.last}` : ''));
     }
     render() {
-        return h("div", null,
+        return h("div", { class: "color-yellow" },
             "Hello, World! I'm ",
             this.format());
     }
@@ -28,7 +28,7 @@ class MyComponent {
             "attr": "middle"
         }
     }; }
-    static get style() { return ""; }
+    static get style() { return ".color-yellow{\n    background: yellow;\n}"; }
 }
 
 export { MyComponent };
