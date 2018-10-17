@@ -2,3 +2,8 @@
 .color-yellow{
     background: yellow;
 }
+
+.color{
+    background: orange;
+    font-size: 30px;
+}
