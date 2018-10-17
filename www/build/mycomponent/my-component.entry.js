@@ -8,12 +8,11 @@ class MyComponent {
             (this.last ? ` ${this.last}` : ''));
     }
     render() {
-        return h("div", { class: "color" },
+        return h("div", null,
             "Hello, World! I'm ",
             this.format());
     }
     static get is() { return "my-component"; }
-    static get encapsulation() { return "shadow"; }
     static get properties() { return {
         "first": {
             "type": String,
@@ -28,7 +27,7 @@ class MyComponent {
             "attr": "middle"
         }
     }; }
-    static get style() { return ".color-yellow{\n    background: yellow;\n}\n\n.color{\n    background: orange;\n    font-size: 30px;\n}"; }
+    static get style() { return "div {\n    background: orange;\n}"; }
 }
 
 export { MyComponent };
