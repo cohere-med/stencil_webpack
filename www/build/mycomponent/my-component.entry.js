@@ -9,8 +9,11 @@ class MyComponent {
     }
     render() {
         return h("div", null,
-            "Hello, World! I'm ",
-            this.format());
+            h("ion-card", null,
+                h("ion-grid", null,
+                    h("ion-row", null,
+                        h("ion-col", { "col-4": true }, "name"),
+                        h("ion-col", { "col-8": true }, "Shashikant Dwivedi")))));
     }
     static get is() { return "my-component"; }
     static get encapsulation() { return "shadow"; }
@@ -28,7 +31,7 @@ class MyComponent {
             "attr": "middle"
         }
     }; }
-    static get style() { return "div {\n    background: orange;\n}"; }
+    static get style() { return "div {\n    background: yellow;\n}"; }
 }
 
 export { MyComponent };

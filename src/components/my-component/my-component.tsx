@@ -20,7 +20,18 @@ export class MyComponent {
 
   render() {
     return <div>
-      Hello, World! I'm {this.format()}
+      <ion-card>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              name
+            </ion-col>
+            <ion-col col-8>
+            Shashikant Dwivedi
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
     </div>
   }
 }
