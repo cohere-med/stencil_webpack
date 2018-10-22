@@ -8,8 +8,7 @@
     "my-component": {
       "bundleIds": {
         "$": "my-component"
-      },
-      "encapsulation": "shadow"
+      }
     }
   }
 }

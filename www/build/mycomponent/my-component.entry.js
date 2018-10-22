@@ -16,7 +16,6 @@ class MyComponent {
                         h("ion-col", { "col-8": true }, "Shashikant Dwivedi")))));
     }
     static get is() { return "my-component"; }
-    static get encapsulation() { return "shadow"; }
     static get properties() { return {
         "first": {
             "type": String,
