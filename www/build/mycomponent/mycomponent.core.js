@@ -99,11 +99,23 @@ s=document.querySelector("script[data-namespace='mycomponent']");if(s){resources
       let styleContainerNode = domApi.$doc.head;
       // if this browser supports shadow dom, then let's climb up
       // the dom and see if we're within a shadow dom
-            false;
+            if (true, domApi.$supportsShadowDom) if (1 /* ShadowDom */ === cmpMeta.encapsulationMeta) 
+      // we already know we're in a shadow dom
+      // so shadow root is the container for these styles
+      styleContainerNode = hostElm.shadowRoot; else {
+        // climb up the dom and see if we're in a shadow dom
+        let root = hostElm;
+        while (root = domApi.$parentNode(root)) if (root.host && root.host.shadowRoot) {
+          // looks like we are in shadow dom, let's use
+          // this shadow root as the container for these styles
+          styleContainerNode = root.host.shadowRoot;
+          break;
+        }
+      }
       // if this container element already has these styles
       // then there's no need to apply them again
       // create an object to keep track if we'ready applied this component style
-      let appliedStyles = plt.componentAppliedStyles.get(styleContainerNode);
+            let appliedStyles = plt.componentAppliedStyles.get(styleContainerNode);
       appliedStyles || plt.componentAppliedStyles.set(styleContainerNode, appliedStyles = {});
       // check if we haven't applied these styles to this container yet
             if (!appliedStyles[styleId]) {
@@ -265,7 +277,8 @@ s=document.querySelector("script[data-namespace='mycomponent']");if(s){resources
     // by adding ?shadow=false it'll force the slot polyfill
     // only add this check when in dev mode
     domApi.$supportsShadowDom = false);
-    false;
+    true;
+    domApi.$attachShadow = ((elm, shadowRootInit) => elm.attachShadow(shadowRootInit));
     false, false;
     return domApi;
   }
@@ -1201,7 +1214,14 @@ s=document.querySelector("script[data-namespace='mycomponent']");if(s){resources
       // do an extra check here, but only for dev mode on the client
       'shadowRoot' in HTMLElement.prototype || (hostElm.shadowRoot = hostElm);
     }
-    false;
+    true;
+    1 /* ShadowDom */ === cmpMeta.encapsulationMeta && domApi.$supportsShadowDom && !hostElm.shadowRoot && 
+    // this component is using shadow dom
+    // and this browser supports shadow dom
+    // add the read-only property "shadowRoot" to the host element
+    domApi.$attachShadow(hostElm, {
+      mode: 'open'
+    });
     // create a host snapshot object we'll
     // use to store all host data about to be read later
     hostSnapshot = {
@@ -1346,7 +1366,13 @@ s=document.querySelector("script[data-namespace='mycomponent']");if(s){resources
       let reflectHostAttr;
       let rootElm = hostElm;
       false;
-      false;
+      // this component SHOULD use native slot/shadow dom
+      // this browser DOES support native shadow dom
+      // and this is the first render
+      // let's create that shadow root
+      // test if this component should be shadow dom
+      // and if so does the browser supports it
+      (true, useNativeShadowDom) && (rootElm = hostElm.shadowRoot);
       if (true, !hostElm['s-rn']) {
         // attach the styles this component needs, if any
         // this fn figures out if the styles should go in a
@@ -1960,7 +1986,7 @@ s=document.querySelector("script[data-namespace='mycomponent']");if(s){resources
           // and components are able to lazy load themselves
           // through standardized browser APIs
           const bundleId = 'string' === typeof cmpMeta.bundleIds ? cmpMeta.bundleIds : cmpMeta.bundleIds[elm.mode];
-          const useScopedCss = false;
+          const useScopedCss = (true, !domApi.$supportsShadowDom);
           let url = resourcesUrl + bundleId + (useScopedCss ? '.sc' : '') + '.entry.js';
           (true, hmrVersionId) && (url += '?s-hmr=' + hmrVersionId);
           // dynamic es module import() => woot!
