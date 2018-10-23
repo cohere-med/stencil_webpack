@@ -9,6 +9,12 @@ export class MyComponent {
   @Prop() first: string;
   @Prop() middle: string;
   @Prop() last: string;
+  @Prop() Persons : any = [
+    {name : 'Shashikant Dwivedi'},
+    {name : 'Meenakshi Tripathi'},
+    {name : 'Sanjeev Sanyal'},
+    {name : 'Nitin Verma'}
+  ]
 
   format(): string {
     return (
@@ -19,19 +25,23 @@ export class MyComponent {
   }
 
   render() {
-    return <div>
-      <ion-card>
-        <ion-grid>
-          <ion-row>
-            <ion-col col-4>
-              name
-            </ion-col>
-            <ion-col col-8>
-            Shashikant Dwivedi
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card>
-    </div>
+    return (<div>Hello,{this.Persons.length} World! I'm {this.format()}
+     {this.Persons.map( person => 
+       <div>
+         <ion-card>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-4>
+                Name
+              </ion-col>
+              <ion-col col-8>
+                {person.name}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+         </ion-card>
+       </div>
+     )}
+    </div>);
   }
 }
