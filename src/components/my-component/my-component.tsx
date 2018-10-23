@@ -25,7 +25,7 @@ export class MyComponent {
   }
 
   render() {
-    return (<div>Hello,{this.Persons.length} World! I'm {this.format()}
+    return (<div>
      {this.Persons.map( person => 
        <div>
          <ion-card>

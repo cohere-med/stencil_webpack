@@ -16,17 +16,12 @@ class MyComponent {
             (this.last ? ` ${this.last}` : ''));
     }
     render() {
-        return (h("div", null,
-            "Hello,",
-            this.Persons.length,
-            " World! I'm ",
-            this.format(),
-            this.Persons.map(person => h("div", null,
-                h("ion-card", null,
-                    h("ion-grid", null,
-                        h("ion-row", null,
-                            h("ion-col", { "col-4": true }, "Name"),
-                            h("ion-col", { "col-8": true }, person.name))))))));
+        return (h("div", null, this.Persons.map(person => h("div", null,
+            h("ion-card", null,
+                h("ion-grid", null,
+                    h("ion-row", null,
+                        h("ion-col", { "col-4": true }, "Name"),
+                        h("ion-col", { "col-8": true }, person.name))))))));
     }
     static get is() { return "my-component"; }
     static get properties() { return {
