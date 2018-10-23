@@ -3,7 +3,7 @@ import { Component, Prop } from '@stencil/core';
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css',
-  shadow: true
+  shadow: false
 })
 export class MyComponent {
   @Prop() first: string;
@@ -27,7 +27,7 @@ export class MyComponent {
   render() {
     return (<div>
      {this.Persons.map( person => 
-       <div>
+       <div class = "card-color">
          <ion-card>
           <ion-grid>
             <ion-row>

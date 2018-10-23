@@ -16,7 +16,7 @@ class MyComponent {
             (this.last ? ` ${this.last}` : ''));
     }
     render() {
-        return (h("div", null, this.Persons.map(person => h("div", null,
+        return (h("div", null, this.Persons.map(person => h("div", { class: "card-color" },
             h("ion-card", null,
                 h("ion-grid", null,
                     h("ion-row", null,
@@ -24,7 +24,6 @@ class MyComponent {
                         h("ion-col", { "col-8": true }, person.name))))))));
     }
     static get is() { return "my-component"; }
-    static get encapsulation() { return "shadow"; }
     static get properties() { return {
         "first": {
             "type": String,
@@ -43,7 +42,7 @@ class MyComponent {
             "attr": "persons"
         }
     }; }
-    static get style() { return "div {\n    background: yellow;\n}"; }
+    static get style() { return ".card-color{\n\n}"; }
 }
 
 export { MyComponent };
