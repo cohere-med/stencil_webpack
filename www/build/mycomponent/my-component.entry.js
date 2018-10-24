@@ -16,12 +16,7 @@ class MyComponent {
             (this.last ? ` ${this.last}` : ''));
     }
     render() {
-        return (h("div", null, this.Persons.map(person => h("div", { class: "card-color" },
-            h("ion-card", null,
-                h("ion-grid", null,
-                    h("ion-row", null,
-                        h("ion-col", { "col-4": true }, "Name"),
-                        h("ion-col", { "col-8": true }, person.name))))))));
+        return (h("temp-card", null));
     }
     static get is() { return "my-component"; }
     static get properties() { return {
@@ -45,4 +40,50 @@ class MyComponent {
     static get style() { return ".card-color{\n\n}"; }
 }
 
-export { MyComponent };
+class MyComponent$1 {
+    constructor() {
+        this.Vitals = {
+            mainCategory: 'Temprature',
+            subCategory: [
+                { name: 'Oral', value: 45, unit: 'Celisius' },
+                { name: 'Axilla', value: 42, unit: 'Celisius' },
+                { name: 'Rectal', value: 41, unit: 'Celisius' }
+            ]
+        };
+    }
+    format() {
+        return ((this.first || '') +
+            (this.middle ? ` ${this.middle}` : '') +
+            (this.last ? ` ${this.last}` : ''));
+    }
+    render() {
+        return (h("ion-card", null,
+            h("span", null, this.Vitals.mainCategory),
+            this.Vitals.subCategory.map(vital => h("ion-grid", null,
+                h("ion-col", { "col-4": true }, vital.name),
+                h("ion-col", { "col-8": true }, vital.value)))));
+    }
+    static get is() { return "temp-card"; }
+    static get properties() { return {
+        "first": {
+            "type": String,
+            "attr": "first"
+        },
+        "last": {
+            "type": String,
+            "attr": "last"
+        },
+        "middle": {
+            "type": String,
+            "attr": "middle"
+        },
+        "Vitals": {
+            "type": "Any",
+            "attr": "vitals",
+            "mutable": true
+        }
+    }; }
+    static get style() { return ""; }
+}
+
+export { MyComponent, MyComponent$1 as TempCard };

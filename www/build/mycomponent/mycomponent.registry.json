@@ -9,6 +9,11 @@
       "bundleIds": {
         "$": "my-component"
       }
+    },
+    "temp-card": {
+      "bundleIds": {
+        "$": "my-component"
+      }
     }
   }
 }

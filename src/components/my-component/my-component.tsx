@@ -25,23 +25,6 @@ export class MyComponent {
   }
 
   render() {
-    return (<div>
-     {this.Persons.map( person => 
-       <div class = "card-color">
-         <ion-card>
-          <ion-grid>
-            <ion-row>
-              <ion-col col-4>
-                Name
-              </ion-col>
-              <ion-col col-8>
-                {person.name}
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-         </ion-card>
-       </div>
-     )}
-    </div>);
+    return (<temp-card></temp-card>);
   }
 }

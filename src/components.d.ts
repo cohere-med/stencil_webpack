@@ -24,15 +24,30 @@ export namespace Components {
     'last'?: string;
     'middle'?: string;
   }
+
+  interface TempCard {
+    'Vitals': any;
+    'first': string;
+    'last': string;
+    'middle': string;
+  }
+  interface TempCardAttributes extends StencilHTMLAttributes {
+    'Vitals'?: any;
+    'first'?: string;
+    'last'?: string;
+    'middle'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'MyComponent': Components.MyComponent;
+    'TempCard': Components.TempCard;
   }
 
   interface StencilIntrinsicElements {
     'my-component': Components.MyComponentAttributes;
+    'temp-card': Components.TempCardAttributes;
   }
 
 
@@ -42,12 +57,20 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLTempCardElement extends Components.TempCard, HTMLStencilElement {}
+  var HTMLTempCardElement: {
+    prototype: HTMLTempCardElement;
+    new (): HTMLTempCardElement;
+  };
+
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'temp-card': HTMLTempCardElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'temp-card': HTMLTempCardElement;
   }
 
 

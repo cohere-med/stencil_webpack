@@ -1,6 +1,6 @@
 /*!
  * Built with http://stenciljs.com
- * 2018-09-23T12:26:29
+ * 2018-09-24T11:53:10
  */
 (function(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components) {
 
@@ -136,4 +136,4 @@ function createComponentOnReadyPrototype(win, namespace, HTMLElementPrototype) {
 
   init(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components);
 
-  })(window, document, "mycomponent","mycomponent",0,"mycomponent.core.js","es5-build-disabled.js","hydrated",[["my-component","my-component",1,[["Persons",1,0,"persons",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]]],HTMLElement.prototype);
+  })(window, document, "mycomponent","mycomponent",0,"mycomponent.core.js","es5-build-disabled.js","hydrated",[["my-component","my-component",1,[["Persons",1,0,"persons",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]],["temp-card","my-component",1,[["Vitals",2,0,"vitals",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]]],HTMLElement.prototype);
