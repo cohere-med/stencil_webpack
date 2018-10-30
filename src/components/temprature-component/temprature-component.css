@@ -1,0 +1,335 @@
+.wide-as-needed {
+    overflow: scroll;
+    white-space: nowrap;
+}
+  
+.scroll { 
+    min-width: 100%;
+}  
+
+.bar.bar-loading {
+    display: block;
+    height: 24px;
+    top: 44px;
+    text-align: center;
+    padding: 0;
+    line-height: 24px;
+  
+    /* transition 'sliding down' (check below)*/
+    -webkit-transition: 200ms all;
+  }
+  
+  
+  /* 
+   * make the content's top changes animate.
+   * might not always look good, but looks
+   * good when our loader is added & removed
+   */
+  .has-header {
+    -webkit-transition: 200ms top;
+  }
+
+  .has-header.has-loading {
+    /* 44px (header) + 24px */
+    top: 68px;
+  }
+  
+  /* make loading bar slide up/down */
+  .bar-loading.ng-enter,
+  .bar-loading.ng-leave.ng-leave-active {
+    height: 0;
+    border-width: 0px;
+  }
+  .bar-loading.ng-enter.ng-enter-active,
+  .bar-loading.ng-leave {
+    height: 24px;
+    border-width: 1px;
+  }
+
+  ion-scroll[scrollX] {
+    white-space: nowrap;
+    .scroll-item {
+      display: inline-block;
+    }
+  }  
+
+  ion-scroll.scroll-x .scroll-content::-webkit-scrollbar{
+    display: none;
+  }
+
+  .druid-suggestion-btn{
+    border: 1px solid;
+    border-color: #0388C7;
+    color: #ffffff;
+    background-color: #0388C7;
+    border-radius: 64px;
+    height: 2.8em;
+    font-size: 1.6rem;
+    margin: 0.4rem 0.2rem;
+    padding: 0 1em;
+    height: 32px;
+  }
+
+  .druid-dialogue{
+    border-color: #FFF;
+    background-color: #FFF;
+    border-radius: 4px 24px 24px 24px;
+    font-size: 1.6rem;
+    color: #505050;
+    margin: -2px;
+    padding: 12px;
+    min-height: 40px;
+    max-height: auto;
+    min-width: 22%;
+    margin-left: 12px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    display: inline-block;
+    margin-left: 2px;
+  }
+
+  .druid-dialogue-response{
+    border-color: #0388c7;
+    background-color: #0388c7;
+    border-radius: 24px 24px 4px 24px;
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin: -2px;
+    padding: 12px;
+    min-height: 40px;
+    max-height: auto;
+    margin-left: 12px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    min-width: 22%;
+    display: inline-block;
+  }
+
+  .druid-dialogue-vitals{
+    border-color: #FFF;
+    background-color: #FFF;
+    border-radius: 4px 24px 24px 24px;
+    font-size: 1.6rem;
+    color: #505050;
+    margin: -2px;
+    padding: 12px;
+    min-height: 40px;
+    max-height: auto;
+    margin-left: 12px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    margin-left: 2px;
+  }
+
+  .druid-dialogue-waveform{
+    border-color: #0000;
+    background-color:black;
+    border-radius: 4px 24px 24px 24px;
+    font-size: 1.6rem;
+    color: #505050;
+    margin: -2px;
+    padding: 12px;
+    min-width: 270px;
+    max-width: 270px;
+    margin-left: 12px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    margin-left: 2px;
+  }
+
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .maintbox {
+    position:relative;
+    width: 100%;
+  }
+
+  #frm textarea{
+    min-height: 25px;
+    border: 2px solid #ccc;
+    width:100%;
+    resize: none;
+    margin: 0;
+    padding-right:60px;  
+}
+
+#right {
+    position:absolute;
+    top: 8px;
+    right:7px;
+    height: 50px;
+    width: 41px;
+    text-align: center;
+    z-index:1;
+}
+
+#right img {
+  cursor:pointer;
+  vertical-align: middle;
+}
+
+.ion-icon-size {
+    font-size: 45px;
+}
+
+.druid-textarea{
+    padding-left: 10px;
+    color: #505050;
+    width:100%; 
+    height:50px; 
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    border: solid 1px #E2E2E2;
+}
+
+.druid-navbar .toolbar-background-ios {
+  border-color: #b2b2b2;
+  background: rgb(255, 255, 255);
+}
+
+.druid-navbar .toolbar-background-md {
+  border-color: #b2b2b2;
+  background: rgb(255, 255, 255);
+}
+
+.druid-time{
+  opacity: 0.5;
+  color: #505050;
+  font-size: 10px;
+}
+
+.pull-right{
+  text-align: right;
+  padding-right: 10px;
+}
+
+.card-list-key {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+  color: #505050;
+  font-size: 16px;
+
+}
+
+.card-list-value,
+{
+    display: inline-block;
+    width: 30%;
+    color: #666;
+    font-weight: 500;
+    font-size: 18px;
+    
+}
+
+.nav-stacked{
+  padding-left: 0px;
+}
+
+.nav-stacked>li:last-of-type {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+li{
+  border-bottom: 1px solid #e4e2e2;
+  padding-top: 10px;
+  height: 40px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.vitalbox-header{
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.1875;
+  letter-spacing: -0.192px;
+  text-align: left;
+  color: #505050;
+}
+
+
+
+.patient-alarm{
+    border: 4px solid #FF1A1A;
+    background: #FF1A1A;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.patient-alarm-text{
+    color: white;
+}
+
+.devices-signal{
+    background: #F5F5F5;
+    border-radius: 6px;
+    height: 30px;
+    padding: 0px;
+}
+
+.test1{
+    text-align:right;
+}
+.suggestion-btn-row{
+    height:68px; 
+    bottom: 25px; 
+    overflow: hidden; 
+    padding-top: 2px;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    padding-left: 10px;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    padding-left: 10px;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    padding-left: 10px;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    padding-left: 10px;
+  }
+
+  .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+      top: auto;
+      bottom: -5px;
+  }
+
+  .test{
+    padding: 2px;
+  }   
+  
+  .toolbar-icon{
+    font-size: 32px !important;
+    margin-top: 1px;
+    margin-left: -10px;
+  }
+
+.monitoractive{
+    background: #00A773;
+}
+
+.monitorventilator{
+    background: #0261B2;
+}
+
+.monitorinfusionPump{
+    background: #900090;
+    
+}
+
+.monitorlabReports{
+    background: #D6430C;
+}
+
+.inactive{
+  background: #DDDDDD;
+}

@@ -1,19 +1,17 @@
 /*!
  * Built with http://stenciljs.com
- * 2018-09-24T11:53:10
+ * 2018-10-30T17:49:56
  */
 (function(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components) {
 
-  function init(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCorePolyfilled, hydratedCssClass, components, HTMLElementPrototype, App, x, y, scriptElm) {
+  function init(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCorePolyfilled, hydratedCssClass, cmpTags, HTMLElementPrototype, App, x, y, scriptElm) {
     // create global namespace if it doesn't already exist
     App = win[namespace] = win[namespace] || {};
-    App.components = components;
-    y = components.map(function (c) { return c[0]; });
-    if (y.length) {
+    if (cmpTags) {
         // auto hide components until they been fully hydrated
         // reusing the "x" and "i" variables from the args for funzies
         x = doc.createElement('style');
-        x.innerHTML = y.join() + '{visibility:hidden}.' + hydratedCssClass + '{visibility:inherit}';
+        x.innerHTML = cmpTags + '{visibility:hidden}.' + hydratedCssClass + '{visibility:inherit}';
         x.setAttribute('data-styles', '');
         y = doc.head.querySelector('meta[charset]');
         doc.head.insertBefore(x, y ? y.nextSibling : doc.head.firstChild);
@@ -136,4 +134,4 @@ function createComponentOnReadyPrototype(win, namespace, HTMLElementPrototype) {
 
   init(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components);
 
-  })(window, document, "mycomponent","mycomponent",0,"mycomponent.core.js","es5-build-disabled.js","hydrated",[["my-component","my-component",1,[["Persons",1,0,"persons",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]],["temp-card","my-component",1,[["Vitals",2,0,"vitals",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]]],HTMLElement.prototype);
+  })(window, document, "mycomponent","mycomponent",0,"mycomponent.core.js","es5-build-disabled.js","hydrated","my-component,temp-card",HTMLElement.prototype);

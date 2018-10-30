@@ -3,7 +3,7 @@ import { Component, Prop } from '@stencil/core';
 @Component({
   tag: 'temp-card',
   styleUrl: 'temprature-component.css',
-  shadow: false
+  shadow: true
 })
 export class MyComponent {
   @Prop() first: string;
@@ -28,7 +28,28 @@ export class MyComponent {
 
   render() {
     return (
-        <ion-card>
+      <ion-row>
+        <ion-col col-1>
+            <img src="assets/imgs/druid_chat.svg" />
+        </ion-col>
+        <ion-col col-9> 
+            <div class="druid-dialogue-vitals">
+              <div class="vitalbox-header"> Current vitals </div>      
+              <ul class="nav nav-stacked ">
+                  <li><a><span class="card-list-key ">Heartrate</span>   <span class="card-list-value "> &nbsp; 48</span></a></li>
+                  <li><a><span class="card-list-key ">SpO2 </span>       <span class="card-list-value "> &nbsp; 91</span></a></li>
+                  <li><a><span class="card-list-key ">Temprature </span> <span class="card-list-value "> &nbsp;38 </span></a></li>
+                  <li><a><span class="card-list-key ">NIBP</span>        <span class="card-list-value "> &nbsp; 89 </span></a></li>
+                  <li><a><span class="card-list-key ">RR</span>          <span class="card-list-value "> &nbsp; 121 </span></a></li>
+              </ul>    
+            </div>
+        </ion-col>
+      </ion-row> 
+    )
+  }
+}
+
+{/* <ion-card class = "card-component">
             <span>{this.Vitals.mainCategory}</span>
             {this.Vitals.subCategory.map( vital => 
                 <ion-grid>
@@ -40,7 +61,4 @@ export class MyComponent {
                 </ion-col>
              </ion-grid>
             )}
-        </ion-card>
-    )
-  }
-}
+        </ion-card> */}
