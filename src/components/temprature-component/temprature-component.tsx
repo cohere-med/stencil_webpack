@@ -29,9 +29,6 @@ export class MyComponent {
   render() {
     return (
       <ion-row>
-        <ion-col col-1>
-            <img src="assets/imgs/druid_chat.svg" />
-        </ion-col>
         <ion-col col-9> 
             <div class="druid-dialogue-vitals">
               <div class="vitalbox-header"> Current vitals </div>      
