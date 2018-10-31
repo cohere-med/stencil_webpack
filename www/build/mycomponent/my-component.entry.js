@@ -58,8 +58,6 @@ class MyComponent$1 {
     }
     render() {
         return (h("ion-row", null,
-            h("ion-col", { "col-1": true },
-                h("img", { src: "assets/imgs/druid_chat.svg" })),
             h("ion-col", { "col-9": true },
                 h("div", { class: "druid-dialogue-vitals" },
                     h("div", { class: "vitalbox-header" }, " Current vitals "),
