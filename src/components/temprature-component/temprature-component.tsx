@@ -33,11 +33,16 @@ export class MyComponent {
             <div class="druid-dialogue-vitals">
               <div class="vitalbox-header"> Current vitals </div>      
               <ul class="nav nav-stacked ">
-                  <li><a><span class="card-list-key ">Heartrate</span>   <span class="card-list-value "> &nbsp; 48</span></a></li>
-                  <li><a><span class="card-list-key ">SpO2 </span>       <span class="card-list-value "> &nbsp; 91</span></a></li>
+              {this.Vitals.subCategory.map( (vital) =>
+                 <div>
+                   <li><a><span class="card-list-key ">{vital.name}</span>   <span class="card-list-value "> &nbsp; {vital.value}</span></a></li>
+                 </div>
+              )}
+                  
+                  {/* <li><a><span class="card-list-key ">SpO2 </span>       <span class="card-list-value "> &nbsp; 91</span></a></li>
                   <li><a><span class="card-list-key ">Temprature </span> <span class="card-list-value "> &nbsp;38 </span></a></li>
                   <li><a><span class="card-list-key ">NIBP</span>        <span class="card-list-value "> &nbsp; 89 </span></a></li>
-                  <li><a><span class="card-list-key ">RR</span>          <span class="card-list-value "> &nbsp; 121 </span></a></li>
+                  <li><a><span class="card-list-key ">RR</span>          <span class="card-list-value "> &nbsp; 121 </span></a></li> */}
               </ul>    
             </div>
         </ion-col>
