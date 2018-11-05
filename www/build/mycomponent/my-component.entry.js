@@ -3,14 +3,17 @@ const { h } = window.mycomponent;
 
 class MyComponent {
     constructor() {
-        this.Persons = [
-            { name: 'Shashikant Dwivedi' },
-            { name: 'Meenakshi Tripathi' },
-            { name: 'Sanjeev Sanyal' },
-            { name: 'Nitin Verma' }
-        ];
+        this.Persons = {
+            mainCategory: 'Temprature',
+            subCategory: [
+                { name: 'spo2', value: 45, unit: 'Celisius' },
+                { name: 'Axilla', value: 42, unit: 'Celisius' },
+                { name: 'Rectal', value: 41, unit: 'Celisius' }
+            ]
+        };
     }
     format() {
+        this.Persons.subCategory;
         return ((this.first || '') +
             (this.middle ? ` ${this.middle}` : '') +
             (this.last ? ` ${this.last}` : ''));
