@@ -45,6 +45,7 @@ class MyComponent {
 
 class MyComponent$1 {
     constructor() {
+        this.first = 'shashikant';
         this.Vitals = {
             mainCategory: 'Temprature',
             subCategory: [

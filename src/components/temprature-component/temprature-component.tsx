@@ -5,7 +5,7 @@ import { Component, Prop, Method } from '@stencil/core';
   styleUrl: 'temprature-component.css',
 })
 export class MyComponent {
-  @Prop() first: string;
+  @Prop() first: string = 'shashikant';
   @Prop() middle: string;
   @Prop() last: string;
   @Prop({mutable : true}) Vitals : any = {
