@@ -74,7 +74,6 @@ class MyComponent$1 {
                                     vital.value))))))))));
     }
     static get is() { return "temp-card"; }
-    static get encapsulation() { return "shadow"; }
     static get properties() { return {
         "first": {
             "type": String,

@@ -13,8 +13,7 @@
     "temp-card": {
       "bundleIds": {
         "$": "my-component"
-      },
-      "encapsulation": "shadow"
+      }
     }
   }
 }

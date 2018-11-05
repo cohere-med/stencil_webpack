@@ -107,23 +107,11 @@ function attachStyles(plt, domApi, cmpMeta, hostElm) {
     let styleContainerNode = domApi.$doc.head;
     // if this browser supports shadow dom, then let's climb up
     // the dom and see if we're within a shadow dom
-        if (true, domApi.$supportsShadowDom) if (1 /* ShadowDom */ === cmpMeta.encapsulationMeta) 
-    // we already know we're in a shadow dom
-    // so shadow root is the container for these styles
-    styleContainerNode = hostElm.shadowRoot; else {
-      // climb up the dom and see if we're in a shadow dom
-      let root = hostElm;
-      while (root = domApi.$parentNode(root)) if (root.host && root.host.shadowRoot) {
-        // looks like we are in shadow dom, let's use
-        // this shadow root as the container for these styles
-        styleContainerNode = root.host.shadowRoot;
-        break;
-      }
-    }
+        false;
     // if this container element already has these styles
     // then there's no need to apply them again
     // create an object to keep track if we'ready applied this component style
-        let appliedStyles = plt.componentAppliedStyles.get(styleContainerNode);
+    let appliedStyles = plt.componentAppliedStyles.get(styleContainerNode);
     appliedStyles || plt.componentAppliedStyles.set(styleContainerNode, appliedStyles = {});
     // check if we haven't applied these styles to this container yet
         if (!appliedStyles[styleId]) {
@@ -295,8 +283,7 @@ function createDomApi(App, win, doc) {
   // by adding ?shadow=false it'll force the slot polyfill
   // only add this check when in dev mode
   domApi.$supportsShadowDom = false);
-  true;
-  domApi.$attachShadow = ((elm, shadowRootInit) => elm.attachShadow(shadowRootInit));
+  false;
   false, false;
   return domApi;
 }
@@ -1259,14 +1246,7 @@ function initHostSnapshot(domApi, cmpMeta, hostElm, hostSnapshot, attribName) {
     // do an extra check here, but only for dev mode on the client
     'shadowRoot' in HTMLElement.prototype || (hostElm.shadowRoot = hostElm);
   }
-  true;
-  1 /* ShadowDom */ === cmpMeta.encapsulationMeta && domApi.$supportsShadowDom && !hostElm.shadowRoot && 
-  // this component is using shadow dom
-  // and this browser supports shadow dom
-  // add the read-only property "shadowRoot" to the host element
-  domApi.$attachShadow(hostElm, {
-    mode: 'open'
-  });
+  false;
   // create a host snapshot object we'll
   // use to store all host data about to be read later
   hostSnapshot = {
@@ -1421,13 +1401,7 @@ function render(plt, cmpMeta, hostElm, instance, perf) {
     let reflectHostAttr;
     let rootElm = hostElm;
     false;
-    // this component SHOULD use native slot/shadow dom
-    // this browser DOES support native shadow dom
-    // and this is the first render
-    // let's create that shadow root
-    // test if this component should be shadow dom
-    // and if so does the browser supports it
-    (true, useNativeShadowDom) && (rootElm = hostElm.shadowRoot);
+    false;
     if (true, !hostElm['s-rn']) {
       // attach the styles this component needs, if any
       // this fn figures out if the styles should go in a
@@ -2084,7 +2058,7 @@ function createPlatformMain(namespace, Context, win, doc, resourcesUrl, hydrated
         // and components are able to lazy load themselves
         // through standardized browser APIs
         const bundleId = 'string' === typeof cmpMeta.bundleIds ? cmpMeta.bundleIds : cmpMeta.bundleIds[elm.mode];
-        const useScopedCss = (true, !domApi.$supportsShadowDom);
+        const useScopedCss = false;
         let url = resourcesUrl + bundleId + (useScopedCss ? '.sc' : '') + '.entry.js';
         (true, hmrVersionId) && (url += '?s-hmr=' + hmrVersionId);
         // dynamic es module import() => woot!
@@ -2129,4 +2103,4 @@ function createPlatformMain(namespace, Context, win, doc, resourcesUrl, hydrated
 
 // esm build which uses es module imports and dynamic imports
 createPlatformMain(namespace, Context, window, document, resourcesUrl, hydratedCssClass, components);
-})(window,document,{},"mycomponent","hydrated",[["my-component","my-component",1,[["Persons",1,0,"persons",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]],["temp-card","my-component",1,[["Vitals",2,0,"vitals",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]],1]]);
+})(window,document,{},"mycomponent","hydrated",[["my-component","my-component",1,[["Persons",1,0,"persons",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]],["temp-card","my-component",1,[["Vitals",2,0,"vitals",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]]]);
