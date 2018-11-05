@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, Method } from '@stencil/core';
 
 @Component({
   tag: 'temp-card',
@@ -15,6 +15,10 @@ export class MyComponent {
         {name : 'Axilla', value : 42, unit : 'Celisius'},
         {name : 'Rectal', value : 41, unit : 'Celisius'}
       ]
+  }
+  @Method()
+  chnageArray(array){
+    this.Vitals = array;
   }
 
   format(): string {

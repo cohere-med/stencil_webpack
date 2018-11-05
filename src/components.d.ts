@@ -27,6 +27,7 @@ export namespace Components {
 
   interface TempCard {
     'Vitals': any;
+    'chnageArray': (array: any) => void;
     'first': string;
     'last': string;
     'middle': string;

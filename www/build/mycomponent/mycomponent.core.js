@@ -1575,9 +1575,14 @@ function defineMember(plt, property, elm, instance, memberName, hostSnapshot, pe
         definePropertyGetterSetter(instance, memberName, getComponentProp, setComponentProp);
   } else {
     false;
-    false;
-    false;
-    false;
+    if (true, property.method) 
+    // @Method()
+    // add a property "value" on the host element
+    // which we'll bind to the instance's method
+    definePropertyValue(elm, memberName, instance[memberName].bind(instance)); else {
+      false;
+      false;
+    }
   }
 }
 
@@ -2103,4 +2108,4 @@ function createPlatformMain(namespace, Context, win, doc, resourcesUrl, hydrated
 
 // esm build which uses es module imports and dynamic imports
 createPlatformMain(namespace, Context, window, document, resourcesUrl, hydratedCssClass, components);
-})(window,document,{},"mycomponent","hydrated",[["my-component","my-component",1,[["Persons",1,0,"persons",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]],["temp-card","my-component",1,[["Vitals",2,0,"vitals",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]]]);
+})(window,document,{},"mycomponent","hydrated",[["my-component","my-component",1,[["Persons",1,0,"persons",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]],["temp-card","my-component",1,[["Vitals",2,0,"vitals",1],["chnageArray",32],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2]]]]);

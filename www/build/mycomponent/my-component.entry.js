@@ -54,6 +54,9 @@ class MyComponent$1 {
             ]
         };
     }
+    chnageArray(array) {
+        this.Vitals = array;
+    }
     format() {
         return ((this.first || '') +
             (this.middle ? ` ${this.middle}` : '') +
@@ -75,6 +78,9 @@ class MyComponent$1 {
     }
     static get is() { return "temp-card"; }
     static get properties() { return {
+        "chnageArray": {
+            "method": true
+        },
         "first": {
             "type": String,
             "attr": "first"
