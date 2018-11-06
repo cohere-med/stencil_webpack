@@ -8,12 +8,8 @@
     "my-component": {
       "bundleIds": {
         "$": "my-component"
-      }
-    },
-    "temp-card": {
-      "bundleIds": {
-        "$": "my-component"
-      }
+      },
+      "encapsulation": "shadow"
     }
   }
 }
