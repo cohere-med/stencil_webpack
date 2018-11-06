@@ -6,9 +6,10 @@ import { Component, Prop } from '@stencil/core';
   shadow: true
 })
 export class MyComponent {
-  @Prop() first: string;
+  @Prop() first: string = 'Shashikant';
   @Prop() middle: string;
   @Prop() last: string;
+  @Prop() rest : string = 'Bingo'
 
   format(): string {
     return (

@@ -2,6 +2,10 @@
 const { h } = window.mycomponent;
 
 class MyComponent {
+    constructor() {
+        this.first = 'Shashikant';
+        this.rest = 'Bingo';
+    }
     format() {
         return ((this.first || '') +
             (this.middle ? ` ${this.middle}` : '') +
@@ -26,6 +30,10 @@ class MyComponent {
         "middle": {
             "type": String,
             "attr": "middle"
+        },
+        "rest": {
+            "type": String,
+            "attr": "rest"
         }
     }; }
     static get style() { return ".card-color{\n\n}"; }

@@ -16,11 +16,13 @@ export namespace Components {
     'first': string;
     'last': string;
     'middle': string;
+    'rest': string;
   }
   interface MyComponentAttributes extends StencilHTMLAttributes {
     'first'?: string;
     'last'?: string;
     'middle'?: string;
+    'rest'?: string;
   }
 }
 
