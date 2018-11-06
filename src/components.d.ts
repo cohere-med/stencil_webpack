@@ -13,12 +13,14 @@ import '@stencil/core';
 export namespace Components {
 
   interface MyComponent {
+    'Vitals': any;
     'first': string;
     'last': string;
     'middle': string;
     'rest': string;
   }
   interface MyComponentAttributes extends StencilHTMLAttributes {
+    'Vitals'?: any;
     'first'?: string;
     'last'?: string;
     'middle'?: string;
