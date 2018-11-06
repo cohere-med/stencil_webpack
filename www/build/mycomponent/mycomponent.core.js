@@ -2129,4 +2129,4 @@ function createPlatformMain(namespace, Context, win, doc, resourcesUrl, hydrated
 
 // esm build which uses es module imports and dynamic imports
 createPlatformMain(namespace, Context, window, document, resourcesUrl, hydratedCssClass, components);
-})(window,document,{},"mycomponent","hydrated",[["my-component","my-component",1,[["Vitals",1,0,"vitals",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2],["rest",1,0,1,2]],1]]);
+})(window,document,{},"mycomponent","hydrated",[["my-component","my-component",1,[["Vitals",2,0,"vitals",1],["first",1,0,1,2],["last",1,0,1,2],["middle",1,0,1,2],["rest",1,0,1,2]],1]]);

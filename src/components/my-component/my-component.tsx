@@ -10,7 +10,7 @@ export class MyComponent {
   @Prop() middle: string;
   @Prop() last: string;
   @Prop() rest : string = 'Bingo';
-  @Prop() Vitals : any = {
+  @Prop({mutable : true}) Vitals : any = {
     mainCategory : 'Temprature',
     subCategory : [
       {name : 'Oral', value : 45, unit : 'Celisius'},
