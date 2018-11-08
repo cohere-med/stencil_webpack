@@ -12,40 +12,44 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
+  interface NibpComponent {
+    'Vitals': any;
     'first': string;
     'last': string;
     'middle': string;
+    'rest': string;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
+  interface NibpComponentAttributes extends StencilHTMLAttributes {
+    'Vitals'?: any;
     'first'?: string;
     'last'?: string;
     'middle'?: string;
+    'rest'?: string;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'NibpComponent': Components.NibpComponent;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'nibp-component': Components.NibpComponentAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLNibpComponentElement extends Components.NibpComponent, HTMLStencilElement {}
+  var HTMLNibpComponentElement: {
+    prototype: HTMLNibpComponentElement;
+    new (): HTMLNibpComponentElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'nibp-component': HTMLNibpComponentElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'nibp-component': HTMLNibpComponentElement;
   }
 
 
