@@ -12,40 +12,44 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
+  interface TemperatureComponent {
+    'Vitals': any;
     'first': string;
     'last': string;
     'middle': string;
+    'rest': string;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
+  interface TemperatureComponentAttributes extends StencilHTMLAttributes {
+    'Vitals'?: any;
     'first'?: string;
     'last'?: string;
     'middle'?: string;
+    'rest'?: string;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'TemperatureComponent': Components.TemperatureComponent;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'temperature-component': Components.TemperatureComponentAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLTemperatureComponentElement extends Components.TemperatureComponent, HTMLStencilElement {}
+  var HTMLTemperatureComponentElement: {
+    prototype: HTMLTemperatureComponentElement;
+    new (): HTMLTemperatureComponentElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'temperature-component': HTMLTemperatureComponentElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'temperature-component': HTMLTemperatureComponentElement;
   }
 
 
