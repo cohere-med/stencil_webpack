@@ -39,6 +39,7 @@ export class MyComponent {
                  </div>
               )}
               </ul>    
+              
             </div>
         </ion-col>
       </ion-row> 
